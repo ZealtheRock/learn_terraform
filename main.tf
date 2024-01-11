@@ -3,7 +3,6 @@ provider "aws" {
 }
 
 resource "aws_vpc" "my_vpc_demo"{
-    name = "my_vpc_demo"
     cidr_block = "10.0.0.0/16"
 }
 resource "aws_subnet" "my_subnet"{
@@ -16,6 +15,6 @@ data "aws_vpc" "existing_vpc"{
 }
 resource "aws_subnet" "my_subnet_2"{
     vpc_id = data.aws_vpc.existing_vpc.id
-    cidr_block = "172.31.45.0/24"
+    cidr_block = "172.31.40.0/24"
     availability_zone = "us-west-2a"
 }
